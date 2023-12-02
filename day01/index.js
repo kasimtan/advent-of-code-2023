@@ -5,16 +5,16 @@ console.log(part1(input))
 console.log(part2(input))
 
 function part1(input) {
-  const nums = []
+  let sum = 0
   for (const line of input) {
     const numStr = line.replace(/[^1-9]/g, '')
-    nums.push(parseInt(`${numStr[0]}${numStr.slice(-1)}`, 10))
+    sum += parseInt(`${numStr[0]}${numStr.slice(-1)}`, 10)
   }
-  return Math.sum(nums)
+  return sum
 }
 
 function part2(input) {
-  const nums = []
+  let sum = 0
   const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   const letters = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
   for (const line of input) {
@@ -32,7 +32,7 @@ function part2(input) {
         maxIndexPair = [dMaxIndex, digits[i]]
       }
     }
-    nums.push(parseInt(`${minIndexPair[1]}${maxIndexPair[1]}`, 10))
+    sum += parseInt(`${minIndexPair[1]}${maxIndexPair[1]}`, 10)
   }
-  return Math.sum(nums)
+  return sum
 }
