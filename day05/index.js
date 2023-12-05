@@ -42,7 +42,7 @@ function getLocation(seed, phases) {
     for (const ranges of phase) {
       var lower = ranges[1];
       var upper = ranges[1] + ranges[2];
-      if (result >= lower && result <= upper) {
+      if (result >= lower && result < upper) {
         result = ranges[0] + (result - lower)
         break;
       }
