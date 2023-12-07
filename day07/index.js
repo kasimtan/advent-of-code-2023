@@ -83,26 +83,26 @@ function getHandType(hand, jokerId) {
   if (Math.max(...values) === 5) {
     return HandType.KIND5
   }
-  else if (values.length === 2 && Math.max(...values) === 4) {
-    if (jokerCount > 0) return HandType.KIND5
-    return HandType.KIND4
-  }
-  else if (values.length === 2 && Math.max(...values) === 3) {
-    if (jokerCount > 0) return HandType.KIND5
-    return HandType.FH
+  else if (values.length === 4) {
+    if (jokerCount > 0) return HandType.KIND3
+    return HandType.PAIR1
   }
   else if (values.length === 3 && Math.max(...values) === 3) {
     if (jokerCount > 0) return HandType.KIND4
     return HandType.KIND3
   }
-  else if (values.length === 3 && Math.max(...values) === 2) {
+  else if (values.length === 3) {
     if (jokerCount > 1) return HandType.KIND4
     if (jokerCount > 0) return HandType.FH
     return HandType.PAIR2
   }
-  else if (values.length === 4) {
-    if (jokerCount > 0) return HandType.KIND3
-    return HandType.PAIR1
+  else if (values.length === 2 && Math.max(...values) === 4) {
+    if (jokerCount > 0) return HandType.KIND5
+    return HandType.KIND4
+  }
+  else if (values.length === 2) {
+    if (jokerCount > 0) return HandType.KIND5
+    return HandType.FH
   }
   else {
     if (jokerCount > 0) return HandType.PAIR1
