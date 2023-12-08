@@ -15,7 +15,7 @@ function part1(moves, mazeMap) {
 }
 
 function part2(moves, mazeMap) {
-  let current = Object.keys(mazeMap).filter(str => str.endsWith('A'))
+  const current = Object.keys(mazeMap).filter(str => str.endsWith('A'))
   const steps = []
   for (const node of current) {
     steps.push(getSteps(moves, mazeMap, node, true))
