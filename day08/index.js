@@ -47,7 +47,7 @@ function findLCM(nums) {
     return gcd(b, a % b) 
   } 
   for (let i = 1; i < nums.length; i++) {
-    result = (nums[i] * result) / gcd(nums[i], result); 
+    result = (nums[i] * result) / gcd(nums[i], result)
   }
   return result
 } 
