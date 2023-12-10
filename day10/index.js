@@ -41,7 +41,9 @@ function part1(maze, startRow, startCol) {
   return farthestSteps
 }
 
-function part2(maze, startPos) {
+function part2(maze, startRow, startCol) {
+  let tiles = 0
+  return tiles
 }
 
 function getStartPos(input) {
@@ -56,7 +58,6 @@ function updateIfValid(maze, row, col, direction, val) {
   if (row < 0 || col < 0 || row > maze.length - 1 || col > maze[0].length - 1) {
     return false
   }
-  // console.log(direction, maze[row][col], val)
   if (direction === Direction.UP && ['F', '7', '|'].includes(maze[row][col]) ||
     direction === Direction.RIGHT && ['7', 'J', '-'].includes(maze[row][col]) ||
     direction === Direction.DOWN && ['L', 'J', '|'].includes(maze[row][col]) ||
